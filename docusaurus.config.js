@@ -14,14 +14,14 @@ const config = {
 
   // Set the production url of your site here
   // TODO: Replace with your custom domain once purchased
-  url: 'https://artisansalemanager.com', // Your custom domain
+  url: 'https://docs.artisansalemanager.com', // Your docs subdomain
   // Set the /<baseUrl>/ pathname under which your site is served
   // For custom domains, this should be '/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
-  // TODO: Replace 'your-username' with your actual GitHub username
-  organizationName: 'your-username', // Your GitHub username
+  // TODO: Replace 'g-gullstrand' with your actual GitHub username
+  organizationName: 'g-gullstrand', // Your GitHub username
   projectName: 'artisan-sale-manager', // Your repo name
 
   onBrokenLinks: 'throw',
@@ -45,7 +45,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/your-username/artisan-sale-manager/tree/main/website/',
+            'https://github.com/g-gullstrand/artisan-sale-manager/tree/main/website/',
         },
         blog: {
           showReadingTime: true,
@@ -56,7 +56,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/your-username/artisan-sale-manager/tree/main/website/',
+            'https://github.com/g-gullstrand/artisan-sale-manager/tree/main/website/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -90,8 +90,8 @@ const config = {
           {to: '/blog', label: 'Blog', position: 'left'},
           {to: '/pricing', label: 'Pricing', position: 'left'},
           {
-            // TODO: Replace 'your-username' with your actual GitHub username
-            href: 'https://github.com/your-username/artisan-sale-manager',
+            // TODO: Replace 'g-gullstrand' with your actual GitHub username
+            href: 'https://github.com/g-gullstrand/artisan-sale-manager',
             label: 'GitHub',
             position: 'right',
           },
@@ -139,8 +139,8 @@ const config = {
               },
               {
                 label: 'GitHub',
-                // TODO: Replace 'your-username' with your actual GitHub username
-                href: 'https://github.com/your-username/artisan-sale-manager',
+                // TODO: Replace 'g-gullstrand' with your actual GitHub username
+                href: 'https://github.com/g-gullstrand/artisan-sale-manager',
               },
             ],
           },
