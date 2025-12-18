@@ -1,0 +1,37 @@
+{
+  "/pricing-a00": {
+    "__comp": "1f391b9e",
+    "__context": {
+      "plugin": "265ae853"
+    },
+    "content": "c5e3162a"
+  },
+  "/docs-27e": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "f0f73323"
+    }
+  },
+  "/docs-090": {
+    "__comp": "a7bd4aaa",
+    "version": "935f2afb"
+  },
+  "/docs-a47": {
+    "__comp": "a94703ab"
+  },
+  "/docs/features/shortcodes-4a7": {
+    "__comp": "17896441",
+    "content": "5b5b5b1d"
+  },
+  "/docs/intro-aed": {
+    "__comp": "17896441",
+    "content": "0e384e19"
+  },
+  "/-af0": {
+    "__comp": "c4f5d8e4",
+    "__context": {
+      "plugin": "265ae853"
+    },
+    "config": "5e9f5e1a"
+  }
+}

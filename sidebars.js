@@ -18,43 +18,11 @@ const sidebars = {
     'intro',
     {
       type: 'category',
-      label: 'Getting Started',
-      items: [
-        'getting-started/installation',
-        'getting-started/first-campaign',
-        'getting-started/basic-concepts',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Features',
       items: [
-        'features/campaigns',
-        'features/bulk-operations',
-        'features/scheduling',
         'features/shortcodes',
-        'features/licensing',
       ],
     },
-    {
-      type: 'category',
-      label: 'API Reference',
-      items: [
-        'api/rest-endpoints',
-        'api/hooks-filters',
-        'api/extending',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Troubleshooting',
-      items: [
-        'troubleshooting/common-issues',
-        'troubleshooting/faq',
-        'troubleshooting/performance',
-      ],
-    },
-    'changelog',
   ],
 };
 

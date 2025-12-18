@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Bulk Operations',
-    Svg: require('@site/static/img/bulk-operations.svg').default,
+    icon: '🚀',
     description: (
       <>
         Update thousands of products in seconds. Apply discounts, set sale prices, 
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: 'Smart Scheduling',
-    Svg: require('@site/static/img/scheduling.svg').default,
+    icon: '⏰',
     description: (
       <>
         Set it and forget it. Schedule sales to start and end automatically, 
@@ -25,7 +25,7 @@ const FeatureList = [
   },
   {
     title: 'Beautiful Display',
-    Svg: require('@site/static/img/display.svg').default,
+    icon: '🎨',
     description: (
       <>
         Showcase your sales anywhere with flexible shortcodes. Responsive grids, 
@@ -35,11 +35,11 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({icon, title, description}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <div className={styles.featureIcon}>{icon}</div>
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>

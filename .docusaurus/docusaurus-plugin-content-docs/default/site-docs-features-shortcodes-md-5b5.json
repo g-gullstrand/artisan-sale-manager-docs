@@ -1,0 +1,23 @@
+{
+  "id": "features/shortcodes",
+  "title": "Shortcodes",
+  "description": "Display sale products anywhere on your site using flexible shortcodes.",
+  "source": "@site/docs/features/shortcodes.md",
+  "sourceDirName": "features",
+  "slug": "/features/shortcodes",
+  "permalink": "/docs/features/shortcodes",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/g-gullstrand/artisan-sale-manager/tree/main/website/docs/features/shortcodes.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/intro"
+  }
+}
