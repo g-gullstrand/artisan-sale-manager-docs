@@ -13,14 +13,16 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  // TODO: Replace with your custom domain once purchased
-  url: 'https://docs.artisansalemanager.com', // Your docs subdomain
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For custom domains, this should be '/'
+  url: 'https://docs.artisansalemanager.com',
   baseUrl: '/',
   
-  // Build to root directory for GitHub Pages
+  // Build directly to website root for GitHub Pages
   trailingSlash: false,
+  
+  // Custom build directory - output to current directory
+  customFields: {
+    buildDir: './'
+  },
 
   // GitHub pages deployment config.
   // TODO: Replace 'g-gullstrand' with your actual GitHub username
