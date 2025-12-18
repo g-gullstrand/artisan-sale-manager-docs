@@ -18,6 +18,9 @@ const config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For custom domains, this should be '/'
   baseUrl: '/',
+  
+  // Build to root directory for GitHub Pages
+  trailingSlash: false,
 
   // GitHub pages deployment config.
   // TODO: Replace 'g-gullstrand' with your actual GitHub username

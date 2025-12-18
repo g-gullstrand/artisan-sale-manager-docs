@@ -5,7 +5,9 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "docusaurus build && npm run move-to-root",
+    "build-only": "docusaurus build",
+    "move-to-root": "rm -rf ../index.html ../assets ../docs ../pricing ../sitemap.xml ../404.html 2>/dev/null || true && cp -r build/* ../ && rm -rf build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
