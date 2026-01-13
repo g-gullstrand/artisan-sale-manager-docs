@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkartisan_sale_manager_docs=globalThis.webpackChunkartisan_sale_manager_docs||[]).push([[554],{4061(a){a.exports=JSON.parse('{"name":"docusaurus-plugin-content-pages","id":"default"}')}}]);

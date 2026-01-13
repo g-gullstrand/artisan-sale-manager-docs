@@ -12,7 +12,6 @@ This directory contains the Docusaurus-powered documentation website for Artisan
 
 1. **Install dependencies**
    ```bash
-   cd website
    npm install
    ```
 
@@ -33,22 +32,42 @@ This directory contains the Docusaurus-powered documentation website for Artisan
 ## 📁 Project Structure
 
 ```
-website/
-├── docs/                   # Documentation pages
+├── docs/                   # Documentation pages (Markdown)
 │   ├── intro.md           # Introduction page
-│   ├── getting-started/   # Getting started guides
-│   ├── features/          # Feature documentation
-│   ├── api/              # API reference
-│   └── troubleshooting/  # Help & troubleshooting
+│   └── features/          # Feature documentation
+│       └── shortcodes.md  # Shortcode documentation
 ├── src/
 │   ├── components/       # React components
 │   ├── css/             # Custom CSS
-│   └── pages/           # Static pages (homepage, pricing)
+│   └── pages/           # React pages
+│       └── index.js     # Homepage (React component)
 ├── static/              # Static assets (images, files)
-├── blog/               # Blog posts (optional)
+│   └── CNAME           # Custom domain configuration
+├── build/              # Generated static files (after build)
 ├── docusaurus.config.js # Site configuration
-└── sidebars.js         # Documentation sidebar
+├── sidebars.js         # Documentation sidebar
+└── package.json        # Dependencies and scripts
 ```
+
+## 🌐 Site Structure
+
+### URL Structure
+- **Homepage**: `artisansalemanager.com/` (React landing page)
+- **Documentation**: `artisansalemanager.com/docs/` (Markdown docs)
+- **Individual docs**: `artisansalemanager.com/docs/intro`, `/docs/features/shortcodes`
+
+### Current Pages
+- `src/pages/index.js` - Homepage with hero, features, stats, and CTAs
+- `docs/intro.md` - Welcome and getting started guide  
+- `docs/features/shortcodes.md` - Shortcode documentation
+
+### Broken Links (To Fix)
+The build shows warnings for missing pages that are referenced:
+- `/blog` - Blog section (not implemented)
+- `/docs/getting-started` - Getting started guide (not implemented)
+- `/docs/features` - Features overview (not implemented) 
+- `/docs/api` - API reference (not implemented)
+- `/pricing` - Pricing page (not implemented)
 
 ## 🔧 Configuration
 
@@ -67,8 +86,11 @@ Add custom CSS in `src/css/custom.css`.
 
 ## 🚀 Deployment
 
-### GitHub Pages (Automatic)
-The site automatically deploys to GitHub Pages when you push to the main branch. The workflow is configured in `.github/workflows/deploy-docs.yml`.
+### GitHub Pages
+The site can be deployed to GitHub Pages. Make sure to:
+1. Enable GitHub Pages in repository settings
+2. Set custom domain to `artisansalemanager.com`
+3. The `static/CNAME` file contains the correct domain
 
 ### Manual Deployment
 ```bash
@@ -77,11 +99,11 @@ npm run serve  # Test locally
 ```
 
 ### Custom Domain
-To use a custom domain:
+The site is configured for `artisansalemanager.com`:
 
-1. Add a `CNAME` file to `static/` with your domain
-2. Update `url` and `baseUrl` in `docusaurus.config.js`
-3. Configure DNS to point to GitHub Pages
+1. ✅ `static/CNAME` contains `artisansalemanager.com`
+2. ✅ `docusaurus.config.js` has correct URL configuration
+3. ✅ DNS points to GitHub Pages IPs (185.199.108-111.153)
 
 ## 📝 Writing Documentation
 
@@ -123,6 +145,11 @@ function example() {
 ```
 
 ## 🎨 Customization
+
+### Current Setup
+- **Homepage**: React component (`src/pages/index.js`) with hero section, features, and CTAs
+- **Documentation**: Markdown files in `docs/` folder
+- **Hybrid approach**: Marketing pages (React) + Documentation (Markdown)
 
 ### Branding
 - Update logo in `static/img/`
