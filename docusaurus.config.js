@@ -18,11 +18,6 @@ const config = {
   
   // Build directly to website root for GitHub Pages
   trailingSlash: false,
-  
-  // Custom build directory - output to current directory
-  customFields: {
-    buildDir: './'
-  },
 
   // GitHub pages deployment config.
   // TODO: Replace 'g-gullstrand' with your actual GitHub username
@@ -47,11 +42,13 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          routeBasePath: '/', // Serve docs at site root instead of /docs/
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/g-gullstrand/artisan-sale-manager/tree/main/website/',
         },
+        pages: false, // Disable pages plugin to avoid conflicts with docs at root
         blog: {
           showReadingTime: true,
           feedOptions: {
