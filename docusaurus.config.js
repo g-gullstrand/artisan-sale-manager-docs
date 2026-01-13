@@ -13,7 +13,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://docs.artisansalemanager.com',
+  url: 'https://artisansalemanager.com',
   baseUrl: '/',
   
   // Build directly to website root for GitHub Pages
@@ -42,13 +42,13 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          routeBasePath: '/', // Serve docs at site root instead of /docs/
+          // routeBasePath: '/', // Docs will be served at /docs/ (default)
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/g-gullstrand/artisan-sale-manager/tree/main/website/',
         },
-        pages: false, // Disable pages plugin to avoid conflicts with docs at root
+        // pages: false, // Enable pages plugin for React homepage
         blog: {
           showReadingTime: true,
           feedOptions: {
