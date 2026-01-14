@@ -4,10 +4,11 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 6rem 0 4rem 0;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  background: #fdfdfd;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 @media screen and (max-width: 996px) {
@@ -37,7 +38,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgba(255, 255, 255, 0.9);
+  color: #4a5568;
 }
 
 .stat strong {
@@ -54,7 +55,7 @@
 
 .demoSection {
   padding: 4rem 0;
-  background: #f8f9fa;
+  background: #fdfdfd;
 }
 
 .demoVideo {
@@ -94,19 +95,19 @@
 
 .ctaSection {
   padding: 4rem 0;
-  background: linear-gradient(135deg, #0073aa 0%, #005a87 100%);
-  color: white;
+  background: #fdfdfd;
+  border-top: 1px solid #f0f0f0;
 }
 
 .ctaSection h2 {
-  color: white;
+  color: #2d3748;
   margin-bottom: 1rem;
 }
 
 .ctaSection p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  opacity: 0.9;
+  color: #4a5568;
 }
 
 .ctaButtons {
@@ -114,4 +115,105 @@
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+/* Hero Callout */
+.heroCallout {
+  margin-bottom: 1rem;
+}
+
+.heroCalloutText {
+  font-size: 1.1rem;
+  color: #718096;
+  font-style: italic;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Real Prices Section */
+.realPricesSection {
+  padding: 4rem 0;
+  background: #fdfdfd;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.benefitsList {
+  margin-top: 2rem;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.75rem;
+}
+
+.checkmark {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.cross {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.comparisonBox {
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 2rem;
+  height: fit-content;
+}
+
+.comparisonBox h3 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #2e3440;
+}
+
+.comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.comparisonItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.comparisonDivider {
+  height: 1px;
+  background: #e9ecef;
+  margin: 1rem 0;
+}
+
+/* Bridge Section */
+.bridgeSection {
+  padding: 3rem 0;
+  background: #fdfdfd;
+}
+
+.bridgeQuestion {
+  font-size: 2.2rem;
+  color: #2e3440;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.bridgeAnswer {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #5e81ac;
+}
+
+.bridgeExplanation {
+  font-size: 1.2rem;
+  color: #4c566a;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }

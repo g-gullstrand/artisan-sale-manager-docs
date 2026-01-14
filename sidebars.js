@@ -16,10 +16,12 @@ const sidebars = {
   // By default, Docusaurus generates a sidebar from the docs folder structure
   tutorialSidebar: [
     'intro',
+    'getting-started',
     {
       type: 'category',
       label: 'Features',
       items: [
+        'features/bulk-operations',
         'features/shortcodes',
       ],
     },

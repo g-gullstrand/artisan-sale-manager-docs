@@ -12,10 +12,18 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
+        <div className={styles.heroCallout}>
+          <p className={styles.heroCalloutText}>
+            Tired of discount plugins that over-promise and under-deliver?
+          </p>
+        </div>
         <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+          Finally, a Sober Sale Manager
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">
+          This plugin does ONE thing, and it does it very well: <strong>sets real WooCommerce sale prices</strong>. 
+          No gimmicks, no compatibility issues, no broken product feeds.
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
@@ -56,6 +64,89 @@ export default function Home() {
       description="Streamline your WooCommerce sales with powerful campaign management, bulk operations, and advanced scheduling. Free and premium features available.">
       <HomepageHeader />
       <main>
+        {/* Real Sale Prices Section */}
+        <section className={styles.realPricesSection}>
+          <div className="container">
+            <div className="row">
+              <div className="col col--6">
+                <Heading as="h2">Real Sale Prices, Not Display Tricks</Heading>
+                <p>
+                  Unlike other plugins that only change what customers see, Artisan Sale Manager 
+                  updates the actual <code>_sale_price</code> meta fields in WooCommerce.
+                </p>
+                <div className={styles.benefitsList}>
+                  <div className={styles.benefit}>
+                    <span className={styles.checkmark}>✅</span>
+                    <strong>Product feeds work correctly</strong> (Google Shopping, Facebook Ads)
+                  </div>
+                  <div className={styles.benefit}>
+                    <span className={styles.checkmark}>✅</span>
+                    <strong>Third-party plugins see real prices</strong>
+                  </div>
+                  <div className={styles.benefit}>
+                    <span className={styles.checkmark}>✅</span>
+                    <strong>WooCommerce core blocks work properly</strong>
+                  </div>
+                  <div className={styles.benefit}>
+                    <span className={styles.checkmark}>✅</span>
+                    <strong>Inventory and reporting stay accurate</strong>
+                  </div>
+                </div>
+              </div>
+              <div className="col col--6">
+                <div className={styles.comparisonBox}>
+                  <h3>Other Plugins vs Artisan Sale Manager</h3>
+                  <div className={styles.comparison}>
+                    <div className={styles.comparisonItem}>
+                      <span className={styles.cross}>❌</span>
+                      <span>Display-only discounts</span>
+                    </div>
+                    <div className={styles.comparisonItem}>
+                      <span className={styles.cross}>❌</span>
+                      <span>Broken product feeds</span>
+                    </div>
+                    <div className={styles.comparisonItem}>
+                      <span className={styles.cross}>❌</span>
+                      <span>Complex, bloated features</span>
+                    </div>
+                    <div className={styles.comparisonDivider}></div>
+                    <div className={styles.comparisonItem}>
+                      <span className={styles.checkmark}>✅</span>
+                      <span>Real WooCommerce sale prices</span>
+                    </div>
+                    <div className={styles.comparisonItem}>
+                      <span className={styles.checkmark}>✅</span>
+                      <span>Perfect feed compatibility</span>
+                    </div>
+                    <div className={styles.comparisonItem}>
+                      <span className={styles.checkmark}>✅</span>
+                      <span>Simple, focused, reliable</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Bridge Section */}
+        <section className={styles.bridgeSection}>
+          <div className="container">
+            <div className="text--center">
+              <Heading as="h2" className={styles.bridgeQuestion}>
+                So it's a sale price bulk editor?
+              </Heading>
+              <p className={styles.bridgeAnswer}>
+                Well... <strong>yes</strong>, and <strong>no</strong>.
+              </p>
+              <p className={styles.bridgeExplanation}>
+                It <em>is</em> the sale price bulk editor you've been dreaming about. 
+                But it's also <strong>so much more</strong>...
+              </p>
+            </div>
+          </div>
+        </section>
+        
         <HomepageFeatures />
         
         {/* Quick Demo Section */}

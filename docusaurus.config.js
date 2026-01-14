@@ -9,7 +9,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Artisan Sale Manager',
-  tagline: 'Professional WooCommerce Sale Management Made Simple',
+  tagline: 'Finally, a sober sale manager that sets real WooCommerce prices',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
