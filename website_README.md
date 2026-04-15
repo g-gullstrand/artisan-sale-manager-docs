@@ -86,17 +86,16 @@ Add custom CSS in `src/css/custom.css`.
 
 ## 🚀 Deployment
 
+### Build
+```bash
+npm run build
+```
+
 ### GitHub Pages
 The site can be deployed to GitHub Pages. Make sure to:
 1. Enable GitHub Pages in repository settings
 2. Set custom domain to `artisansalemanager.com`
 3. The `static/CNAME` file contains the correct domain
-
-### Manual Deployment
-```bash
-npm run build
-npm run serve  # Test locally
-```
 
 ### Custom Domain
 The site is configured for `artisansalemanager.com`:
