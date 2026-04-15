@@ -21,10 +21,14 @@ const sidebars = {
       type: 'category',
       label: 'Features',
       items: [
+        'features/campaigns',
+        'features/segments',
+        'features/conflicts',
         'features/bulk-operations',
         'features/shortcodes',
       ],
     },
+    'faq',
   ],
 };
 

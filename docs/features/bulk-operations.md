@@ -1,182 +1,131 @@
-# Bulk Operations
+# Bulk Operations & Performance
 
-Artisan Sale Manager's bulk operations allow you to apply sales to hundreds or thousands of products simultaneously, saving hours of manual work.
+Learn how Artisan Sale Manager handles operations on multiple products simultaneously and what to expect when working with larger product catalogs.
 
 ## Overview
 
-The bulk operations system can handle:
-- **Unlimited products**: No limits on how many products you can update
-- **Category-based sales**: Apply to entire product categories
-- **Individual selection**: Cherry-pick specific products
-- **Smart filtering**: Target products by price, stock status, attributes
-- **Batch processing**: Large operations are processed in background
+Artisan Sale Manager processes campaign operations efficiently:
+- **Direct Processing**: Campaign activation/deactivation happens immediately
+- **Efficient Queries**: Optimized database operations for product updates
+- **Real-time Updates**: Sale prices applied instantly across your store
+- **Scalable Design**: Handles hundreds to thousands of products reliably
+- **Memory Efficient**: Optimized for standard WordPress hosting
 
-## Category Sales
+## How Bulk Operations Work
 
-### Apply Sale to Entire Category
+### Campaign Activation Process
 
-1. **Navigate to Sale Manager**
-2. **Click "New Campaign"**
-3. **Select "Category Sale"**
-4. **Choose target categories**:
-   - Single category: "Electronics"
-   - Multiple categories: "Electronics", "Clothing", "Books"
-   - Include subcategories: Enable to include child categories
-5. **Configure discount** (see [Pricing Options](./pricing))
-6. **Set schedule** (see [Scheduling](./scheduling))
-7. **Click "Apply Sale"**
+When you activate a campaign targeting multiple products:
 
-### Category Exclusions
+1. **Segment Resolution**: System identifies all products matching your criteria
+2. **Price Calculation**: Discount applied to each product's regular price
+3. **Database Update**: Sale prices updated in WooCommerce product meta
+4. **Cache Clearing**: Product caches cleared for immediate frontend updates
+5. **Completion**: Campaign marked as active, changes visible immediately
 
-Exclude specific products from category sales:
+### Campaign Deactivation Process
 
-```
-Category: Electronics (100 products)
-Exclude: Premium headphones, Professional cameras
-Result: 98 products get the sale price
-```
+When you deactivate a campaign:
 
-## Individual Product Selection
+1. **Product Identification**: System finds all products in the deactivated campaign
+2. **Targeted Price Sync**: Recalculates sale prices for products in any active campaign
+3. **Conflict Resolution**: Remaining active campaigns apply their prices to overlapping products
+4. **Price Clearing**: Products with no remaining active campaigns show regular prices
+5. **Cache Clearing**: Ensures frontend shows updated prices
+6. **Completion**: Campaign marked as inactive
 
-### Manual Selection
+## Performance Considerations
 
-1. **Choose "Individual Products"**
-2. **Search and select products**:
-   - Type product names
-   - Use SKU search
-   - Browse by category
-3. **Review selection** in the preview panel
-4. **Apply sale settings**
+### Product Count Guidelines
 
-### Smart Filters
+**Small Campaigns (1-100 products)**
+- Instant processing (< 2 seconds)
+- No special considerations needed
+- Suitable for most shared hosting
 
-Target products based on criteria:
+**Medium Campaigns (100-500 products)**
+- Quick processing (2-10 seconds)
+- May see brief loading during activation
+- Works well on most hosting plans
 
-**Price Range**
-```
-Products priced between $50 - $200
-Apply 15% discount
-```
+**Large Campaigns (500-1,000+ products)**
+- Processing time varies (10-30 seconds)
+- Consider activating during low-traffic periods
+- May require higher-performance hosting
+- Monitor for PHP timeout issues
 
-**Stock Status**
-```
-Only in-stock products
-Exclude out-of-stock items
-```
+### Hosting Requirements
 
-**Product Attributes**
-```
-Color: Red, Blue
-Size: Large, XL
-Brand: Nike, Adidas
-```
+**Shared Hosting**
+- Works fine for campaigns up to 500 products
+- May experience slower processing on large campaigns
+- Consider upgrading for stores with 1,000+ products
 
-## Bulk Pricing Strategies
+**VPS/Dedicated Hosting**
+- Recommended for campaigns over 500 products
+- Better performance and reliability
+- Can handle larger product catalogs efficiently
 
-### Tiered Discounts
+**WordPress-Specific Hosting**
+- Usually optimized for WordPress performance
+- Good balance of cost and performance
+- Suitable for most store sizes
 
-Apply different discounts based on product price:
-
-```
-$0 - $50:     10% off
-$51 - $100:   15% off  
-$101 - $200:  20% off
-$200+:        25% off
-```
-
-### Quantity-Based Pricing
-
-Adjust discounts based on stock levels:
-
-```
-High stock (50+ units): 30% off (clear inventory)
-Medium stock (10-49):   20% off (standard sale)
-Low stock (1-9):        10% off (preserve margin)
-```
-
-## Processing Large Operations
-
-### Background Processing
-
-For operations affecting 500+ products:
-
-1. **Operation queued**: Shows in processing queue
-2. **Progress tracking**: Real-time progress bar
-3. **Email notification**: Completion alert sent
-4. **Error reporting**: Failed products listed
-
-### Performance Optimization
-
-**Batch Size**: Operations processed in batches of 100 products
-**Memory Management**: Automatic memory cleanup between batches
-**Server Load**: Respects server limits to prevent timeouts
-
-## Monitoring and Rollback
-
-### Operation History
-
-Track all bulk operations:
-- **Date/time** of operation
-- **Products affected** count
-- **Discount applied** details
-- **User** who performed operation
-- **Status** (completed, failed, rolled back)
-
-### Rollback Operations
-
-Undo bulk operations safely:
-
-1. **Go to Operation History**
-2. **Find the operation** to undo
-3. **Click "Rollback"**
-4. **Confirm** the rollback
-5. **Original prices restored** automatically
-
-⚠️ **Note**: Rollback only works if original prices were backed up (enabled by default).
-
-## Best Practices
-
-### Before Large Operations
-
-- ✅ **Backup your database**
-- ✅ **Test on staging site** first
-- ✅ **Start with small batch** (10-50 products)
-- ✅ **Check product feed compatibility**
-
-### During Operations
-
-- ✅ **Monitor progress** in admin dashboard
-- ✅ **Don't close browser** during processing
-- ✅ **Avoid other bulk operations** simultaneously
-
-### After Operations
-
-- ✅ **Verify prices** on frontend
-- ✅ **Check product feeds** (Google Shopping, etc.)
-- ✅ **Test checkout process**
-- ✅ **Monitor sales performance**
-
-## Troubleshooting
+## Troubleshooting Performance Issues
 
 ### Common Issues
 
-**Operation Stuck/Frozen**
-- Check server error logs
-- Increase PHP memory limit
-- Reduce batch size in settings
+**Campaign Activation Takes Too Long**
+- **Cause**: Large number of products being processed
+- **Solution**: Consider breaking into smaller campaigns
+- **Prevention**: Test campaign size on staging environment
 
-**Some Products Not Updated**
-- Check product status (published/draft)
-- Verify category assignments
-- Review error log in operation history
+**PHP Timeout Errors**
+- **Cause**: Server execution time limit reached
+- **Solution**: Increase `max_execution_time` in PHP settings
+- **Alternative**: Contact hosting provider for assistance
 
-**Product Feeds Not Updating**
-- Clear WooCommerce cache
-- Regenerate product feed
-- Check feed plugin compatibility
+**Memory Limit Errors**
+- **Cause**: PHP memory limit exceeded during processing
+- **Solution**: Increase `memory_limit` in PHP settings
+- **Workaround**: Reduce campaign size temporarily
 
-### Getting Help
+**Slow Frontend Updates**
+- **Cause**: Caching plugins not clearing properly
+- **Solution**: Manually clear all caches after campaign activation
+- **Prevention**: Configure caching plugin to clear on product updates
 
-- **[Troubleshooting Guide](../troubleshooting)**: Detailed solutions
+### Optimization Tips
+
+**For Large Campaigns**
+- Activate during low-traffic periods
+- Clear all caches before and after activation
+- Monitor server resources during processing
+- Consider upgrading hosting if frequently handling large campaigns
+
+**Database Optimization**
+- Ensure WooCommerce database tables are optimized
+- Regular database maintenance recommended
+- Consider database indexing for large product catalogs
+
+## Best Practices
+
+### Campaign Size Management
+- **Start small**: Test with 10-50 products initially
+- **Scale gradually**: Increase campaign size as you gain confidence
+- **Monitor performance**: Watch for slowdowns or errors
+- **Plan timing**: Activate large campaigns during off-peak hours
+
+### Server Considerations
+- **Know your limits**: Understand your hosting plan's capabilities
+- **Monitor resources**: Watch CPU and memory usage during operations
+- **Plan upgrades**: Consider better hosting for growing stores
+- **Backup regularly**: Always backup before large operations
+
+## Getting Help
+
+- **[Campaign Management Guide](./campaigns)**: Learn campaign creation and management
+- **[Segment Builder Guide](./segments)**: Master product targeting
+- **[Conflict Resolution](./conflicts)**: Handle overlapping campaigns
+- **[FAQ](../faq)**: Common questions and troubleshooting
 - **[Support Forum](https://wordpress.org/support/plugin/artisan-sale-manager/)**: Community help
-- **[GitHub Issues](https://github.com/g-gullstrand/artisan-sale-manager/issues)**: Technical support
