@@ -4,32 +4,32 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Bulk Operations',
+    title: 'Bulk Sale Campaigns',
     icon: '🚀',
     description: (
       <>
-        Update thousands of products in seconds. Apply discounts, set sale prices, 
-        and manage inventory across your entire catalog with powerful bulk operations.
+        Apply percentage, fixed, or target-price discounts across hundreds of products 
+        at once. Organize sales into named campaigns and activate them with a single click.
       </>
     ),
   },
   {
-    title: 'Smart Scheduling',
+    title: 'Scheduling & Priority',
     icon: '⏰',
     description: (
       <>
-        Set it and forget it. Schedule sales to start and end automatically, 
-        with conflict detection and priority management for overlapping campaigns.
+        Set start and end dates — campaigns activate and deactivate automatically via WP Cron. 
+        When campaigns overlap, the priority system ensures the right price always wins.
       </>
     ),
   },
   {
-    title: 'Beautiful Display',
+    title: 'Shortcode Display',
     icon: '🎨',
     description: (
       <>
-        Showcase your sales anywhere with flexible shortcodes. Responsive grids, 
-        customizable styling, and seamless WooCommerce integration.
+        Show sale products anywhere with <code>[asm_products_on_sale]</code>. 
+        Filter by campaign, sort by price, paginate, and override the template from your theme.
       </>
     ),
   },

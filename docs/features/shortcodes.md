@@ -19,14 +19,15 @@ Display products currently on sale in a customizable grid layout.
 ```
 
 **Parameters:**
-- `campaign` (optional): Filter by specific campaign name (default: 'all')
-- `limit` (optional): Number of products to display (default: 12)
+- `campaign` (optional): Filter by campaign — accepts the **campaign name** (e.g. `"Summer Sale"`) or a **numeric campaign ID** (default: `'all'`)
+- `limit` (optional): Maximum total number of products to include. Use `-1` for all products (default: `-1`)
+- `per_page` (optional): Products per page when `paginate="true"` (default: `12`)
 - `columns` (optional): Number of columns in grid layout (1-6, default: 3)
-- `orderby` (optional): Sort order - `menu_order`, `date`, `price`, `title`, `random` (default: 'menu_order')
-- `order` (optional): Sort direction - `ASC` or `DESC` (default: 'ASC')
-- `paginate` (optional): Enable pagination - `true` or `false` (default: false)
-- `show_sale_badge` (optional): Show sale badges - `true` or `false` (default: true)
-- `show_original_price` (optional): Show original price - `true` or `false` (default: true)
+- `orderby` (optional): Sort order - `menu_order`, `date`, `price`, `title`, `random` (default: `menu_order`). `price` sorts by lowest current/sale price, works for both simple and variable products.
+- `order` (optional): Sort direction - `ASC` or `DESC` (default: `ASC`)
+- `paginate` (optional): Enable WP pagination links below the grid - `true` or `false` (default: `false`). Requires the page to support `paged` query vars (works on pages/posts with pretty permalinks).
+- `show_sale_badge` (optional): Show sale badges - `true` or `false` (default: `true`)
+- `show_original_price` (optional): Show original price for simple products - `true` or `false` (default: `true`)
 - `class` (optional): Additional CSS class to apply
 
 ## Customizing the Shortcode Output
@@ -104,7 +105,7 @@ If no template override is found, the shortcode generates:
 
 ```css
 /* Style the products grid */
-.artisan-sale-products {
+.artisan-sale-products-grid {
     display: grid;
     gap: 20px;
     margin: 20px 0;
@@ -179,10 +180,10 @@ add_filter('asm_query_args_on_sale', function($query_args, $atts) {
     return $query_args;
 }, 10, 2);
 
-// Control template location
+// Provide a custom template path as a last resort (fires only when no theme/plugin template is found)
 add_filter('asm_locate_template', function($template_path, $template_name) {
-    // Return custom template path or false to use default
-    return $template_path;
+    // Return a valid file path string to use it, or false to show the "template not found" error
+    return '/path/to/my-custom/' . $template_name;
 }, 10, 2);
 
 // Filter no products message
@@ -287,7 +288,7 @@ For modern block themes, create a template that matches your theme's design:
 - Check file permissions (should be readable)
 - Ensure template file has proper PHP opening tags
 - Clear any caching plugins after adding template
-- **Note**: Template is required - shortcode will show error if no template found
+- **Note**: The plugin ships a default template, so theme overrides are optional — you only need one if you want custom markup
 
 **Template errors?**
 - Check PHP error logs for syntax errors in custom template

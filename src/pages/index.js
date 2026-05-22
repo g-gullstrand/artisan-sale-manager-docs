@@ -27,7 +27,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/getting-started/installation">
+            to="/docs/getting-started">
             Get Started - 5min ⏱️
           </Link>
           <Link
@@ -39,16 +39,16 @@ function HomepageHeader() {
         </div>
         <div className={styles.heroStats}>
           <div className={styles.stat}>
-            <strong>10,000+</strong>
-            <span>Active Installs</span>
-          </div>
-          <div className={styles.stat}>
-            <strong>4.9★</strong>
-            <span>User Rating</span>
-          </div>
-          <div className={styles.stat}>
             <strong>Free</strong>
             <span>Core Features</span>
+          </div>
+          <div className={styles.stat}>
+            <strong>Open Source</strong>
+            <span>GPL Licensed</span>
+          </div>
+          <div className={styles.stat}>
+            <strong>WooCommerce Native</strong>
+            <span>Real Sale Prices</span>
           </div>
         </div>
       </div>
@@ -198,23 +198,23 @@ export default function Home() {
               <div className="col col--6">
                 <div className="shortcode-example">
                   <h4>Simple Grid</h4>
-                  <code>[artisan_sale_products limit="6" columns="3"]</code>
+                  <code>[asm_products_on_sale limit="6" columns="3"]</code>
                 </div>
                 
                 <div className="shortcode-example">
                   <h4>Specific Campaign</h4>
-                  <code>[artisan_sale_products campaign="123" limit="4"]</code>
+                  <code>[asm_products_on_sale campaign="summer-sale" limit="4"]</code>
                 </div>
               </div>
               <div className="col col--6">
                 <div className="shortcode-example">
-                  <h4>Price Focused</h4>
-                  <code>[artisan_sale_products orderby="price" show_sale_badge="true"]</code>
+                  <h4>Sort by Price</h4>
+                  <code>[asm_products_on_sale orderby="price" order="ASC"]</code>
                 </div>
                 
                 <div className="shortcode-example">
-                  <h4>Custom Styling</h4>
-                  <code>[artisan_sale_products class="my-sale-grid" columns="4"]</code>
+                  <h4>With Pagination</h4>
+                  <code>[asm_products_on_sale per_page="12" paginate="true" class="my-sale-grid"]</code>
                 </div>
               </div>
             </div>
@@ -225,32 +225,6 @@ export default function Home() {
                 to="/docs/features/shortcodes">
                 View All Shortcode Options →
               </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className={styles.ctaSection}>
-          <div className="container">
-            <div className="text--center">
-              <Heading as="h2">Ready to Streamline Your Sales?</Heading>
-              <p>
-                Join thousands of WooCommerce store owners who trust Artisan Sale Manager 
-                for their promotional campaigns.
-              </p>
-              <div className={styles.ctaButtons}>
-                <Link
-                  className="button button--primary button--lg"
-                  to="https://wordpress.org/plugins/artisan-sale-manager/">
-                  Download Free Plugin
-                </Link>
-                <Link
-                  className="button button--outline button--primary button--lg"
-                  to="/docs/getting-started/installation"
-                  style={{marginLeft: '1rem'}}>
-                  Read Documentation
-                </Link>
-              </div>
             </div>
           </div>
         </section>

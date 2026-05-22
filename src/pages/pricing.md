@@ -5,8 +5,6 @@ description: Choose the perfect plan for your WooCommerce store
 
 # Pricing Plans
 
-Choose the plan that fits your store's needs. All plans include core features with premium upgrades available.
-
 <div className="pricing-cards">
 
 <div className="pricing-card">
@@ -15,15 +13,17 @@ Choose the plan that fits your store's needs. All plans include core features wi
 
 <div className="pricing-price">$0</div>
 
-Perfect for small stores getting started
+Great for trying the plugin or running a small store
 
-### Features Included:
-- ✅ Unlimited campaigns
-- ✅ Basic bulk operations (up to 100 products)
-- ✅ Simple scheduling
-- ✅ Core shortcodes
-- ✅ Community support
-- ✅ Basic analytics
+### What's included:
+- ✅ Up to 3 campaigns
+- ✅ Up to 10 products per campaign
+- ✅ Real WooCommerce sale prices
+- ✅ Campaign scheduling (start & end dates)
+- ✅ Custom sale badges
+- ✅ Priority system & conflict detection
+- ✅ Shortcode for frontend display
+- ✅ Community support via WordPress.org
 
 <a href="https://wordpress.org/plugins/artisan-sale-manager/" className="button button--primary button--block">
   Download Free
@@ -35,42 +35,19 @@ Perfect for small stores getting started
 
 ## **Professional**
 
-<div className="pricing-price">$49<span style={{fontSize: '1rem', fontWeight: 'normal'}}>/year</span></div>
+<div className="pricing-price">$4.99<span style={{fontSize: '1rem', fontWeight: 'normal'}}>/month</span></div>
 
-For growing businesses that need more power
+<div style={{fontSize: '0.9rem', marginTop: '-0.5rem', marginBottom: '1rem', opacity: 0.8}}>or $39.99/year — save 33%</div>
+
+Everything in Free, without the limits
 
 ### Everything in Free, plus:
-- 🚀 Unlimited bulk operations
-- 🚀 Advanced scheduling with timezones
-- 🚀 Campaign priority system
-- 🚀 Enhanced analytics & reporting
-- 🚀 Premium email support
-- 🚀 Early access to new features
+- 🚀 **Unlimited campaigns**
+- 🚀 **Unlimited products per campaign**
+- 🚀 Priority email support
 
 <a href="#" className="button button--primary button--block">
-  Start Free Trial
-</a>
-
-</div>
-
-<div className="pricing-card">
-
-## **Enterprise**
-
-<div className="pricing-price">$149<span style={{fontSize: '1rem', fontWeight: 'normal'}}>/year</span></div>
-
-For large stores with complex needs
-
-### Everything in Professional, plus:
-- 🏢 Multi-site license (up to 5 sites)
-- 🏢 Advanced API access
-- 🏢 Custom integrations support
-- 🏢 Priority phone support
-- 🏢 Dedicated account manager
-- 🏢 Custom feature development
-
-<a href="#" className="button button--primary button--block">
-  Contact Sales
+  Get Professional
 </a>
 
 </div>
@@ -79,34 +56,20 @@ For large stores with complex needs
 
 ## Frequently Asked Questions
 
-### **Is there a free version?**
-Yes! The free version includes all core features and is perfect for small to medium stores. You can upgrade anytime as your business grows.
-
-### **What's included in the free trial?**
-The 3-day free trial gives you full access to all Professional features. No credit card required.
+### **What's the difference between Free and Professional?**
+The only difference is limits. Free users can run up to 3 campaigns with up to 10 products each. Professional removes both limits entirely. All features — scheduling, badges, conflict detection, shortcodes — are available on both plans.
 
 ### **Can I upgrade or downgrade anytime?**
-Absolutely. You can change your plan at any time from your account dashboard. Upgrades are prorated, and downgrades take effect at the next billing cycle.
+Yes. You can upgrade at any time and the change takes effect immediately. Downgrades take effect at the next billing cycle.
 
 ### **Do you offer refunds?**
-Yes, we offer a 30-day money-back guarantee. If you're not satisfied, we'll refund your purchase, no questions asked.
+Yes, we offer a 30-day money-back guarantee, no questions asked.
 
-### **Is support included?**
-- **Free**: Community support via WordPress.org forums
-- **Professional**: Email support with 24-hour response time
-- **Enterprise**: Priority email + phone support
+### **Is there a free trial?**
+No time-limited trial — the free version is fully functional within its limits. Download it and see if it fits your workflow before upgrading.
 
-### **Can I use this on multiple sites?**
-- **Free & Professional**: Single site license
-- **Enterprise**: Up to 5 sites included
-
-## Need Help Choosing?
-
-Not sure which plan is right for you? Here's our recommendation:
-
-- **Start with Free** if you have less than 100 products or simple sale needs
-- **Choose Professional** if you need advanced scheduling, analytics, or have 100+ products
-- **Go Enterprise** if you manage multiple stores or need custom integrations
+### **Is support included on the free plan?**
+Free users get community support via WordPress.org forums. Professional users get priority email support.
 
 ## Ready to Get Started?
 
@@ -115,11 +78,11 @@ Not sure which plan is right for you? Here's our recommendation:
     Download Free Plugin
   </a>
   <span style={{margin: '0 1rem'}}>or</span>
-  <a href="/docs/getting-started/installation" className="button button--outline button--primary button--lg">
-    View Documentation
+  <a href="/docs/getting-started" className="button button--outline button--primary button--lg">
+    Read the Docs
   </a>
 </div>
 
 ---
 
-*All prices are in USD. Professional and Enterprise plans are billed annually. Free version is always free with no hidden costs.*
+*Prices in USD. Professional billed monthly or annually. Free version is always free.*

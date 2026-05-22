@@ -162,6 +162,24 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* Pricing cards */
+.pricing-cards {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+  margin: 2rem 0;
+}
+
+.pricing-cards .pricing-card {
+  flex: 1;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .pricing-cards {
+    flex-direction: column;
+  }
+}
+
 .pricing-card {
   border: 2px solid #e9ecef;
   border-radius: 12px;

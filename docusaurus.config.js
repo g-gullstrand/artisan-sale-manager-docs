@@ -75,7 +75,7 @@ const config = {
         title: 'Artisan Sale Manager',
         logo: {
           alt: 'Artisan Sale Manager Logo',
-          src: 'img/logo.svg',
+          src: 'img/icon-256x256.png',
         },
         items: [
           {
@@ -84,14 +84,7 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/pricing', label: 'Pricing', position: 'left'},
-          {
-            // TODO: Replace 'g-gullstrand' with your actual GitHub username
-            href: 'https://github.com/g-gullstrand/artisan-sale-manager',
-            label: 'GitHub',
-            position: 'right',
-          },
+          {to: '/pricing', label: 'Pricing', position: 'left'}
         ],
       },
       footer: {
@@ -106,12 +99,8 @@ const config = {
               },
               {
                 label: 'Features',
-                to: '/docs/features',
-              },
-              {
-                label: 'API Reference',
-                to: '/docs/api',
-              },
+                to: '/docs/features/campaigns',
+              }
             ],
           },
           {
@@ -126,21 +115,7 @@ const config = {
                 href: 'https://wordpress.org/support/plugin/artisan-sale-manager/',
               },
             ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                // TODO: Replace 'g-gullstrand' with your actual GitHub username
-                href: 'https://github.com/g-gullstrand/artisan-sale-manager',
-              },
-            ],
-          },
+          }
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Artisan Sale Manager. Built with Docusaurus.`,
       },
