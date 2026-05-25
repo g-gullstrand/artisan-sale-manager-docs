@@ -117,7 +117,7 @@ const config = {
             ],
           }
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Artisan Sale Manager. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Woodland Development (https://woodlanddev.se). Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
