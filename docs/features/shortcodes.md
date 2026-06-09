@@ -4,18 +4,18 @@ Artisan Sale Manager provides a powerful shortcode to display products currently
 
 ## Available Shortcode
 
-### `[asm_products_on_sale]`
+### `[artisansm_products_on_sale]`
 
 Display products currently on sale in a customizable grid layout.
 
 **Basic Usage:**
 ```
-[asm_products_on_sale]
+[artisansm_products_on_sale]
 ```
 
 **With Parameters:**
 ```
-[asm_products_on_sale limit="8" columns="4" campaign="summer-sale"]
+[artisansm_products_on_sale limit="8" columns="4" campaign="summer-sale"]
 ```
 
 **Parameters:**
@@ -82,7 +82,7 @@ If no template override is found, the shortcode generates:
 ```html
 <div class="artisan-sale-products-grid columns-3">
     <div class="artisan-sale-product-item">
-        <div class="sale-badge">-25%</div>
+        <div class="sale-badge">Sale!</div>
         <div class="product-image">
             <a href="..."><img src="..." /></a>
         </div>
@@ -92,7 +92,6 @@ If no template override is found, the shortcode generates:
                 <span class="original-price">$100</span>
                 <span class="sale-price">$75</span>
             </div>
-            <div class="savings-info">Save 25%</div>
             <div class="product-actions">
                 <!-- WooCommerce add to cart button -->
             </div>
@@ -142,12 +141,12 @@ You can use WordPress conditional tags with the shortcode:
 ```php
 // Only show on homepage
 if (is_home()) {
-    echo do_shortcode('[asm_products_on_sale limit="6"]');
+    echo do_shortcode('[artisansm_products_on_sale limit="6"]');
 }
 
 // Show different campaigns for different pages
 if (is_shop()) {
-    echo do_shortcode('[asm_products_on_sale campaign="featured" columns="4"]');
+    echo do_shortcode('[artisansm_products_on_sale campaign="featured" columns="4"]');
 }
 ```
 
@@ -157,10 +156,10 @@ Use the shortcode in your theme files:
 
 ```php
 // In your theme's functions.php or template files
-echo do_shortcode('[asm_products_on_sale limit="6" columns="3"]');
+echo do_shortcode('[artisansm_products_on_sale limit="6" columns="3"]');
 
 // With specific campaign
-echo do_shortcode('[asm_products_on_sale campaign="summer-sale" show_sale_badge="true"]');
+echo do_shortcode('[artisansm_products_on_sale campaign="summer-sale" show_sale_badge="true"]');
 ```
 
 ### Available Hooks
@@ -175,30 +174,30 @@ add_filter('artisan_sale_manager_enqueue_shortcode_styles', function($should_enq
 });
 
 // Filter query arguments
-add_filter('asm_query_args_on_sale', function($query_args, $atts) {
+add_filter('artisansm_query_args_on_sale', function($query_args, $atts) {
     // Modify WP_Query arguments
     return $query_args;
 }, 10, 2);
 
 // Provide a custom template path as a last resort (fires only when no theme/plugin template is found)
-add_filter('asm_locate_template', function($template_path, $template_name) {
+add_filter('artisansm_locate_template', function($template_path, $template_name) {
     // Return a valid file path string to use it, or false to show the "template not found" error
     return '/path/to/my-custom/' . $template_name;
 }, 10, 2);
 
 // Filter no products message
-add_filter('asm_message_on_sale', function($message, $atts) {
+add_filter('artisansm_message_on_sale', function($message, $atts) {
     return 'Custom no products message';
 }, 10, 2);
 
 // Filter grid HTML output
-add_filter('asm_grid_html_on_sale', function($output, $products, $atts) {
+add_filter('artisansm_grid_html_on_sale', function($output, $products, $atts) {
     // Modify entire grid HTML
     return $output;
 }, 10, 3);
 
 // Filter individual product HTML
-add_filter('asm_item_html_on_sale', function($output, $product, $atts) {
+add_filter('artisansm_item_html_on_sale', function($output, $product, $atts) {
     // Modify individual product HTML
     return $output;
 }, 10, 3);
@@ -270,11 +269,11 @@ For modern block themes, create a template that matches your theme's design:
 **Shortcode not displaying?**
 - Ensure the plugin is activated
 - Check that you have products with sale prices set
-- Verify shortcode syntax: `[asm_products_on_sale]`
+- Verify shortcode syntax: `[artisansm_products_on_sale]`
 - Check if the campaign parameter matches existing campaigns
 
 **No products showing?**
-- Verify products have `_sale_price` meta fields set
+- Verify products are assigned to an **active campaign** in Artisan Sale Manager (the shortcode only shows products managed by the plugin, not externally-priced products)
 - Check campaign filters are correctly configured
 - Ensure products are published and in stock
 
